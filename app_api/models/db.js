@@ -17,7 +17,7 @@ try {
     const dbConnection = mongoose.connection;
     dbConnection.on("error", (err) => console.log(`Connection error ${err}`));
     dbConnection.once("open", () => console.log("Connected to DB!"));
-    //mongoose.connect(dbURI);
+  
     
 if (process.env.NODE_ENV === 'production') {
   dbURI = process.env.MONGODB_URI;

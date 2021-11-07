@@ -1,0 +1,28 @@
+doctype html
+head
+  title  Admin 
+  meta(charset='utf-8')
+  
+form(action='/create', method='POST')
+  label(for='title')  Title 
+  br
+  input#title(type='text')
+  br
+  label(for='Author')  Author 
+  br
+  input#Author(type='text')
+  br
+  label(for='Genre')  Genre 
+  br
+  input#Genre(type='text')
+  br
+  label(for='Rating')  Rating 
+  br
+  input#Rating(type='number')
+  br
+  label(for='Status')  Status 
+  br
+  input#Status(type='text')
+  br
+  br
+  button#btnAddBook(type='submit') Add Book
