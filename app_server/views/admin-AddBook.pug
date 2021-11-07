@@ -2,27 +2,26 @@ doctype html
 head
   title  Admin 
   meta(charset='utf-8')
-  
-form(action='/create', method='POST')
+form(method='POST')
   label(for='title')  Title 
   br
-  input#title(type='text')
+  input#title(type='text' name='title')
   br
   label(for='Author')  Author 
   br
-  input#Author(type='text')
+  input#author(type='text' name='author')
   br
   label(for='Genre')  Genre 
   br
-  input#Genre(type='text')
+  input#genre(type='text' name='genre')
   br
   label(for='Rating')  Rating 
   br
-  input#Rating(type='number')
+  input#rating(type='number' name='rating')
   br
   label(for='Status')  Status 
   br
-  input#Status(type='text')
+  input#status(type='text' name='status')
   br
   br
-  button#btnAddBook(type='submit') Add Book
+  input(type='submit', value='Submit')
