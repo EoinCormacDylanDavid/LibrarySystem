@@ -8,6 +8,10 @@ const apiOptions = {
     apiOptions.server = 'https://pure-temple-67771.herokuapp.com'; //need to put our heroku link here
     }
 
+    const displayAdminAddBook = function(req,res){
+        res.render('admin-AddBook');
+    }
 
 module.exports = {
+    displayAdminAddBook
 };
