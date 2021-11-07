@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 const Book = mongoose.model('Book');
 
+const BookAppCtrl = require('../../app_server/controllers/books');
+
 const getBookList = function(req,res){
     Book.find({}, function(err,result){
         if(err) {
@@ -13,18 +15,23 @@ const getBookList = function(req,res){
 
 
 const addBookToCollection = function(req,res) { //working just needs to get data from form now
-    var testBook = new Book({
-        title:"Test Book",
-        author:"Test Author",
-        genre:"Test Genre",
-        rating: 5,
-        status: "available"
-    });
-    testBook.save(function(err,book){
-        if(err) return console.error(err);
-        console.log(book.title + " saved to book collection");
-    });
+    var newBook = Book({
+        title: req.body.title,
+        author: req.body.author,
+        genre: req.body.genre,
+        rating: req.body.rating,
+        status: req.body.status
+      });
+      console.log(newBook);
+      newBook.save(function(err){
+        if(err) throw err;
+    
+        console.log('Book added');
+      })
+      BookAppCtrl.displayAdminAddBook(req,res);
 };
+
+
 
 
 
