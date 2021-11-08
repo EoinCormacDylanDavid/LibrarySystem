@@ -1,13 +1,9 @@
-extends header
-
-block content
-    each book in books
-        .card 
-            .card-block 
-                h4 
-                    a(href="/book")= book.title
-
-                p.author = book.author 
-                p.genre = book.genre 
-                p.rating = book.rating
-                p.status = book.status
+each book in books
+    .card 
+        .card-block 
+            h4 
+                a(href="/" +book._id)= book.title 
+            p.author= book.author
+            p.genre= book.genre 
+            p.rating= book.rating
+            p.status= book.status

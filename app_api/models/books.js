@@ -6,6 +6,7 @@ const booksSchema = new mongoose.Schema({
   genre: {type: String},
   rating: {type: Number,'default': 0,min: 0,max: 5},
   status: {type: String}
+},{ versionKey: false
 });
 
 mongoose.model('Book',booksSchema);

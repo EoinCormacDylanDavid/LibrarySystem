@@ -1,6 +1,6 @@
 const { response } = require('express');
-const request = require('request');
 const apiBooks = require('../../app_api/controllers/books');
+const request = require('request');
 const apiOptions = { 
     server : 'http://localhost:3000' 
     }; 
@@ -12,6 +12,32 @@ const apiOptions = {
         res.render('admin-AddBook');
     }
 
+    
+    const _renderBookPage = function(req, res, responseBody){ 
+        res.render('book-list', {books: responseBody });
+        };
+
+    const booklist = function(req, res){
+        const path = '/api/allBookData'; 
+        const requestOptions = { 
+        url : apiOptions.server + path, 
+        method : 'GET', 
+        json : {},
+        qs : {}
+        };
+        request(
+            requestOptions,function(err, response, body) {
+            _renderBookPage(req, res, body); 
+            }
+            );
+        };
+            
+            
+            
+        
+
 module.exports = {
-    displayAdminAddBook
+    displayAdminAddBook,
+    booklist,
+    _renderBookPage
 };
