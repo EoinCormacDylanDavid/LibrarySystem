@@ -15,6 +15,9 @@ const getBookList = function(req,res){
 
 
 const addBookToCollection = function(req,res) { //working just needs to get data from form now
+
+    if(req.body.title != '' && req.body.author != '' && req.body.genre != '' && req.body.rating != null && req.body.status != '')
+    {
     var newBook = Book({
         title: req.body.title,
         author: req.body.author,
@@ -28,6 +31,10 @@ const addBookToCollection = function(req,res) { //working just needs to get data
     
         console.log('Book added');
       })
+    }
+    else{
+        console.log("invalid entry");
+    }
       BookAppCtrl.displayAdminAddBook(req,res);
 };
 
