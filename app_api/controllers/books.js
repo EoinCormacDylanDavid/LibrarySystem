@@ -3,6 +3,7 @@ const Book = mongoose.model('Book');
 
 const BookAppCtrl = require('../../app_server/controllers/books');
 
+//get book list
 const getBookList = function(req,res){
     Book.find({}, function(err,result){
         if(err) {
@@ -13,8 +14,8 @@ const getBookList = function(req,res){
     });
 };
 
-
-const addBookToCollection = function(req,res) { //working just needs to get data from form now
+//adds book to database using data from /admin/addbook form .
+const addBookToCollection = function(req,res) { 
 
     if(req.body.title != '' && req.body.author != '' && req.body.genre != '' && req.body.rating != null && req.body.status != '')
     {

@@ -13,11 +13,6 @@ router.get('/', function(req, res, next) {
     res.render('index');
   });
 
-/* display collection data */
-router.get('/allBookData',function(req,res){
-  BookApiCtrl.getBookList(req,res);
-});
-
 /* display admin addbook page */
 router.get('/admin/addbook',function(req,res){
   BookAppCtrl.displayAdminAddBook(req,res);
@@ -25,9 +20,13 @@ router.get('/admin/addbook',function(req,res){
 
 /* Enter new book to Database */
 router.post('/admin/addbook', function(req,res,next) {
-
   BookApiCtrl.addBookToCollection(req,res);
-}); 
+  });
+
+/*display books page */
+router.get('/books', function(req,res){
+BookAppCtrl.booklist(req,res);
+});
 
 
 module.exports = router;
