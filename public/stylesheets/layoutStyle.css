@@ -44,3 +44,22 @@
   background-color:#663F46;
   color: white;
   }
+
+body {background-color: rgb(160, 224, 233);}
+
+  .card {
+    background-color: #c0baf5;
+  }
+  
+  .card-primary {
+    border-color: #000000;
+    margin-bottom: 1rem;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lobster', cursive;
+  }
+
+  p {
+    color: black
+  }
