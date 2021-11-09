@@ -30,9 +30,15 @@ router.get('/books', function(req,res){
 BookAppCtrl.booklist(req,res);
 });
 
+
 router.get('/', ctrlLocations.home);
 router.get('/viewBooks', ctrlLocations.viewBooks);
 router.get('/login', ctrlLocations.login);
 router.get('/register', ctrlLocations.register);
+
+router.get('/books/:bookid',function(req,res){
+  BookAppCtrl.bookdata(req,res);
+});
+
 
 module.exports = router;

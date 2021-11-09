@@ -11,4 +11,8 @@ router.get('/allBookData',function(req,res){
   BookApiCtrl.getBookList(req,res);
 });
 
+router.get('/books/:bookid',function(req,res){
+  BookApiCtrl.bookReadOne(req,res);
+});
+
 module.exports = router;
