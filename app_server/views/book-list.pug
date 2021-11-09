@@ -2,8 +2,9 @@ each book in books
     .card 
         .card-block 
             h4 
-                a(href="/" +book._id)= book.title 
+                a(href="/books/" +book._id)= book.title 
             p.author= book.author
             p.genre= book.genre 
             p.rating= book.rating
             p.status= book.status
+            

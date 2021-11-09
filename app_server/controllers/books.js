@@ -12,11 +12,11 @@ const apiOptions = {
         res.render('admin-AddBook');
     }
 
-    
+    //renders page with all books displayed
     const _renderBookPage = function(req, res, responseBody){ 
-        res.render('book-list', {books: responseBody });
+        res.render('book-list', {books: responseBody});
         };
-
+    
     const booklist = function(req, res){
         const path = '/api/allBookData'; 
         const requestOptions = { 
@@ -31,6 +31,26 @@ const apiOptions = {
             }
             );
         };
+    
+            //renders individual book page
+    const _renderSinglePage = function(req,res,responseBody){ 
+        res.render('book-page',{bookdata: responseBody});
+    };
+
+    const bookdata = function(req,res){
+        const path = '/api/books/' + req.params.bookid;
+        const requestOptions = { 
+            url : apiOptions.server + path, 
+            method : 'GET', 
+            json : {},
+            qs : {}
+            };
+        request(
+            requestOptions,function(err,response,body){
+                _renderSinglePage(req,res,body);
+            }
+        );
+    };
             
             
             
@@ -39,5 +59,7 @@ const apiOptions = {
 module.exports = {
     displayAdminAddBook,
     booklist,
-    _renderBookPage
+    _renderBookPage,
+    _renderSinglePage,
+    bookdata
 };
