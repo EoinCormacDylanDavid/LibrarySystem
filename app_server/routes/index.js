@@ -28,5 +28,9 @@ router.get('/books', function(req,res){
 BookAppCtrl.booklist(req,res);
 });
 
+router.get('/books/:bookid',function(req,res){
+  BookAppCtrl.bookdata(req,res);
+});
+
 
 module.exports = router;

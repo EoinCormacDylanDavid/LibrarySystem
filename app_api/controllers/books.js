@@ -14,6 +14,30 @@ const getBookList = function(req,res){
     });
 };
 
+const bookReadOne = function(req,res){
+    Book
+        .findById(req.params.bookid)
+        .exec((err, Book) => {
+            if (!Book) {
+              res	
+                .status(404) 
+                .json({	
+                  "message": "bookid not found"
+                });	 
+              return;
+            } else if (err) {
+              res	
+                .status(404) 
+                .json(err); 
+              return; 	
+            }
+            res		
+              .status(200)
+              .json(Book);
+          });
+      }; 
+
+
 //adds book to database using data from /admin/addbook form .
 const addBookToCollection = function(req,res) { 
 
@@ -46,5 +70,5 @@ const addBookToCollection = function(req,res) {
 module.exports = {
     addBookToCollection,
     getBookList,
-    
+    bookReadOne
 }
