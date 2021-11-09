@@ -1,25 +1,29 @@
+
 doctype html
+include layout.pug
 head
-  title  Admin 
+  title  Admin
   meta(charset='utf-8')
+  link(rel='stylesheet', href='/stylesheets/adminStyle.css')
 form(method='POST')
-  label(for='title')  Title 
+  h2 Add Book
+  label(for='title')  Title
   br
   input#title(type='text' name='title')
   br
-  label(for='Author')  Author 
+  label(for='Author')  Author
   br
   input#author(type='text' name='author')
   br
-  label(for='Genre')  Genre 
+  label(for='Genre')  Genre
   br
   input#genre(type='text' name='genre')
   br
-  label(for='Rating')  Rating 
+  label(for='Rating')  Rating
   br
   input#rating(type='number' step='0.5' name='rating')
   br
-  label(for='Status')  Status 
+  label(for='Status')  Status
   br
   input#status(type='text' name='status')
   br

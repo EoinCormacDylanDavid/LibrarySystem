@@ -6,6 +6,8 @@ const Book = mongoose.model('Book');
 
 const BookApiCtrl = require('../../app_api/controllers/books');
 const BookAppCtrl = require('../controllers/books');
+const ctrlLocations = require('../controllers/locations');
+
 
 
 /* GET home page. */
@@ -28,5 +30,9 @@ router.get('/books', function(req,res){
 BookAppCtrl.booklist(req,res);
 });
 
+router.get('/', ctrlLocations.home);
+router.get('/viewBooks', ctrlLocations.viewBooks);
+router.get('/login', ctrlLocations.login);
+router.get('/register', ctrlLocations.register);
 
 module.exports = router;
