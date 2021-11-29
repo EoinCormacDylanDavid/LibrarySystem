@@ -1,0 +1,77 @@
+head
+  link(rel='stylesheet' type='text/css' href='/stylesheets/indexStyle.css')
+.header
+  h1 The Irish Library
+  #navbar.sticky
+    a(href='addbook') Add Book
+    a(href='books') List Books
+    a(href='register') Register
+    a(href='login') Login
+section.intro
+  | HI! Welcome to the Irish Library, This is a website where you can the most suitable book or genre for you!!!
+.content
+  i
+    b Best Selling Books
+  .section
+    h2 Harry Potter and The prince of Azkaban
+    p
+      | Author: J.K Rowling
+      br
+      br
+      | Genre: Fantasy
+      br
+      br
+      |     Status: Available
+  .section2
+    h2 Harry Potter and The prince of Azkaban
+    p
+      | Author: J.K Rowling
+      br
+      br
+      | Genre: Fantasy
+      br
+      br
+      |     Status: Available
+  .section3
+    h2 Harry Potter and The prince of Azkaban
+    p
+      | Author: J.K Rowling
+      br
+      br
+      | Genre: Fantasy
+      br
+      br
+      |     Status: Available
+  .section4
+    h2 Harry Potter and The prince of Azkaban
+    p
+      | Author: J.K Rowling
+      br
+      br
+      | Genre: Fantasy
+      br
+      br
+      |     Status: Available
+footer
+  .contact
+    h4 Contacts
+    ul(style='list-style-type: none')
+      li
+        a(href='file:///C:/Users/rusty/OneDrive/Desktop/eddcsofttools@gmail.com') Email: eddcsofttools@gmail.com
+    h4 Location
+    ul(style='list-style-type: none')
+      li
+        a Munster Technological University Kerry
+      li
+        a Tralee, Co.Kerry, Ireland, V93 VK5X
+script.
+  window.onscroll = function() {myFunction()};
+  var navbar = document.getElementById("navbar");
+  var sticky = navbar.offsetTop;
+  function myFunction() {
+  if (window.pageYOffset >= sticky) {
+  navbar.classList.add("sticky")
+  } else {
+  navbar.classList.remove("sticky");
+  }
+  }

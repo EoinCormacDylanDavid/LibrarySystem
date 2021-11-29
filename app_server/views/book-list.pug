@@ -1,0 +1,19 @@
+head
+    link(rel='stylesheet', href='/stylesheets/booksStyle.css')
+    .header
+        h1 The Irish Library
+        #navbar.sticky
+            a(href='addbook') Add Book
+            a(href='books') List Books
+            a(href='register') Register
+            a(href='login') Login
+each book in books
+    content
+        .card
+            .card-block
+                h4
+                    a(href="/books/" +book._id)= book.title
+                p.author= book.author
+                p.genre= book.genre
+                p.rating= book.rating
+                p.status= book.status
