@@ -21,5 +21,6 @@ steps:
     npm install mongoose@latest
     npm install mongodb@latest
     ng build --prod
+    mocha
   displayName: 'npm install and build'
 
