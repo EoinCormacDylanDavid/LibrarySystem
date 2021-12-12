@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>LibraryPublic</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="/assets/stylesheets/indexStyle.css" />
+  <link rel="stylesheet" href="/assets/stylesheets/booksStyle.css" />
+  <!---<link rel="stylesheet" href="/assets/stylesheets/style.css" />-->
+</head>
+<body>
+  <div class="header">
+    <h1>The Irish Library</h1>
+    <div id="navbar">
+      <!--C:\Lib\app_server\views-->
+      <a href='about-list-component.html'> About Us</a>
+      <a href='/../../../app_server/views/books.pug'> List of Books</a>
+      <a href='/../../../app_server/views/register.pug'> Register</a>
+      <a href='/../../../app_server/views/login.pug'> Login</a>
+    </div>
+  </div>
+  
+  <div class="cardOne">
+    <h2>{{AboutUs.name}}</h2>
+    <p>
+     {{AboutUs.description}} </p>
+  </div>
+</body>
+</html>
